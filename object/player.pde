@@ -3,8 +3,11 @@ class Player {
 
 //Player p1 = new Player(); just a variable
 // var for player
+Enemy[] enemies;
 float xPos=0;
 float yPos=0;
+int hp;
+int attack;
 //float topspeed;
 //velocity
 //PVector velocity;
@@ -14,10 +17,12 @@ float yPos=0;
 boolean [] keys = new boolean[128];
 
 //constructor
-Player() {
-  velocity = new PVector(0,0);
-  xPos=100;
-  yPos=200;
+Player(int php,int pattack) {
+ // velocity = new PVector(0,0);
+   hp=php;
+   attack=pattack;
+   xPos=100;
+   yPos=200;
 }
 
 //methods
@@ -60,5 +65,23 @@ void p1Collision() {
   else if(yPos < 0 || yPos > height) {
     yPos *=-1;
   }
+}
+//it kills the player instead of enemies
+void p1Death()
+{
+ if(hp<1)
+ {
+   background(0);
+ }
+}
+//attacking doesnt work but sword shows up
+void p1Attack()
+{
+  if(mouseButton == LEFT)
+  {
+   fill(55);
+   rect(xPos+10,yPos,5,15);
+  }
+  
 }
 }
