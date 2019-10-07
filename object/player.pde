@@ -5,37 +5,22 @@ class Player {
 // var for player
 float xPos=0;
 float yPos=0;
-float topspeed;
+//float topspeed;
 //velocity
-PVector velocity;
+//PVector velocity;
 //acceloration
-PVector acceleration;
+//PVector acceleration;
 //movement
-boolean right= false;
-boolean left = false;
-boolean down = false;
-boolean up = false;
+boolean [] keys = new boolean[128];
 
 //constructor
 Player() {
   velocity = new PVector(0,0);
+  xPos=100;
+  yPos=200;
 }
 
 //methods
-//if key is pressed move
-//void keyPressed() {
-//  if(key =='a') {
-//    left=true;
-//  }
-//  else if(key == 'd') {
-//    right = true;
-//  }
-//}
-//void keyReleased() {
-//  if(key =='a') {
-//    left=false;
-//  }
-//}
 
 //disp
 void p1Display(){
@@ -46,32 +31,24 @@ void p1Display(){
 //move
 void p1Movement(){
   //set speed value
-  if (left) {
-   xPos = xPos -1;
+  if (keys['a'])  //don't need to specify true or false since its a boolean
+  {
+   xPos--;
    // change accel
   }
-  else if (right) {
-    xPos = xPos +1;
+  if (keys['d']) 
+  {
+    xPos++;
   }
-  else if (up) {
-    yPos = yPos-1;
+  if (keys['w']) 
+  {
+    yPos--;
   }
-  else if (down) {
-    yPos = yPos+1;
+  if (keys['s']) 
+  {
+    yPos++;
   }
-  //if key release stop movement
-  if(key =='a') {
-    left = false;
-  }
-  else if(key =='d') {
-    right = false;
-  }
-  else if(key =='s') {
-    down = false;
-  }
-  else if(key == 'w') {
-    up = false;
-  }
+
   // addaccel to vel
   // add velocity to pos
 }
