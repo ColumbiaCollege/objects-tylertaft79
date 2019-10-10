@@ -2,40 +2,47 @@ class Enemy
 {
   //set up variables
   String name;
-  int hp;
-  int attack;
+  int bhp=10;
+  int battack;
   float x,y;
   Player players;
   //players=new Player(10,2);
   
   //constructor
-  Enemy(String Ename, int Ehp, int Eattack, float Ex, float Ey)
+  Enemy(String _name, int _attack, float _x, float _y)
   {
-    name=Ename;
-    hp=Ehp;
-    attack=Eattack;
-    x=Ex;
-    y=Ey;
+    name=_name;
+    battack=_attack;
+    x=_x;
+    y=_y;
+  }
+  void Ehealth(int _hp)
+  {
+    bhp=_hp;
+    if (bhp==0) {
+      //enemies[i].remove;
+      background(255);
+    }
   }
   //basic enemy shape for testing
   void drawEnemy()
   {
     stroke(1);
     fill(#ff0000);
-    ellipse(x,y,10,10);  
+    ellipse(x,y,50,50);  
   }
   //attacking doesnt work
   void eAttack()
   {
     if(x<10)
     {
-     attack=players.hp-2; 
+      
     }
   }
   //death doesnt work
   void eDeath()
   {
-   if(hp<1)
+   if(bhp<1)
    {
      background(255);
    }
