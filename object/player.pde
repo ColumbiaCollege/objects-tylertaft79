@@ -88,7 +88,7 @@ class Player {
       // Check distance from player swordtip and swordtip y, enemyX and enemyY if lets than 10
       // if Player is attacking
       for (int i=0; i < enemies.length; i++) {
-        if (dist(xPos, yPos, enemies[i].x, enemies[i].y) <= 10 && attack)
+        if (dist(xPos, yPos, enemies[i].x, enemies[i].y) <= 15 && attack)
         {
           enemies[i].Ehealth(-2); 
           System.out.print("hey i think it works");

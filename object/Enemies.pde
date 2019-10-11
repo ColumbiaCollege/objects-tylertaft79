@@ -2,9 +2,9 @@ class Enemy
 {
   //set up variables
   String name;
-  int bhp=10;
   int battack;
   float x,y;
+  int bhp;
   Player players;
   //players=new Player(10,2);
   
@@ -16,13 +16,11 @@ class Enemy
     x=_x;
     y=_y;
   }
-  void Ehealth(int _hp)
+  int Ehealth(int _hp)
   {
+    _hp=10;
     bhp=_hp;
-    if (bhp==0) {
-      //enemies[i].remove;
-      background(255);
-    }
+    return bhp;
   }
   //basic enemy shape for testing
   void drawEnemy()

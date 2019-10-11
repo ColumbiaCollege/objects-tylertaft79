@@ -33,10 +33,14 @@ void draw()
  for(int i=0; i<4; i++) 
  {
  enemies[i].drawEnemy();
+ enemies[i].Ehealth(10);
  enemies[i].eDeath();
- //if(enemies[i].Ehealth()){
+ if(enemies[i].Ehealth()){
+   //enemies[i].splice();
+   //splice(enemies[i]);
    //enemies[i].remove;
- //}
+   fill(255);
+ }
  }
 }
 
